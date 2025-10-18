@@ -1,0 +1,44 @@
+repo_root: .
+llm:
+  provider: anthropic   # or openai
+  model: claude-3-5-sonnet-20241022
+  temperature: 0.1
+  max_output_tokens: 4096
+  timeout: 60
+retrieval:
+  max_files: 16
+  max_bytes_per_file: 20000
+tests:
+  python: "pytest -q"
+  node: "npm test --silent"
+linters:
+  python: ["ruff check", "mypy"]
+  node: ["eslint", "tsc --noEmit"]
+risk:
+  auto_approve_score_max: 0.3
+  delete_file_max_count: 3
+  require_approval_patterns:
+    - "rm "
+    - "sudo"
+    - "curl.*bash"
+    - "wget.*bash"
+safety:
+  path_jail_enabled: true
+  shell_command_allowlist:
+    - pytest
+    - python
+    - python3
+    - node
+    - npm
+    - pnpm
+    - yarn
+    - ruff
+    - mypy
+    - eslint
+    - tsc
+    - make
+    - uv
+    - pip
+    - git
+  max_shell_timeout: 120
+  max_file_size_bytes: 1048576
