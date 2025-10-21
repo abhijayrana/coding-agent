@@ -4,7 +4,7 @@
 
 ```bash
 git clone <repository-url>
-cd langchain-takehome
+cd coding-agent
 ./install.sh
 ```
 
@@ -15,7 +15,7 @@ This creates a virtual environment and installs the `coding-agent` command.
 Add your API key:
 
 ```bash
-# While still in langchain-takehome/
+# While still in coding-agent/
 echo "ANTHROPIC_API_KEY=sk-ant-..." > .env
 ```
 
@@ -31,7 +31,7 @@ Navigate to any project and start the agent:
 
 ```bash
 cd ~/my-project
-source ~/langchain-takehome/venv/bin/activate
+source ~/coding-agent/venv/bin/activate
 coding-agent chat
 ```
 
@@ -41,7 +41,7 @@ The agent will operate on whatever directory you're in.
 
 ```
 $ cd ~/my-calculator-app
-$ source ~/langchain-takehome/venv/bin/activate
+$ source ~/coding-agent/venv/bin/activate
 $ coding-agent chat
 
 You: add a Calculator class with add and subtract methods
@@ -69,13 +69,13 @@ You: quit
 ## Troubleshooting
 
 **API key error:**
-Make sure `.env` exists in `langchain-takehome/` with your API key.
+Make sure `.env` exists in `coding-agent/` with your API key.
 
 **`coding-agent` command not found:**
-Make sure you activated the venv: `source ~/langchain-takehome/venv/bin/activate`
+Make sure you activated the venv: `source ~/coding-agent/venv/bin/activate`
 
 **Command blocked:**
-Create `agent.yaml` in your project (copy from `~/langchain-takehome/agent.config.example.yaml`):
+Create `agent.yaml` in your project (copy from `~/coding-agent/agent.config.example.yaml`):
 
 ```yaml
 shell:
